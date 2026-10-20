@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <!-- Outer Shield Stroke with Neon Cyan Gradient -->
+    <path
+        android:pathData="M54,23 L79,31 C79,56 68,72 54,85 C40,72 29,56 29,31 Z"
+        android:strokeWidth="3.2"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round">
+        <aapt:attr name="android:strokeColor">
+            <gradient
+                android:startX="29"
+                android:startY="23"
+                android:endX="79"
+                android:endY="85"
+                android:type="linear">
+                <item android:offset="0.0" android:color="#00F0FF" />
+                <item android:offset="0.5" android:color="#38BDF8" />
+                <item android:offset="1.0" android:color="#818CF8" />
+            </gradient>
+        </aapt:attr>
+    </path>
+
+    <!-- Shield Glow Inner Fill -->
+    <path
+        android:pathData="M54,26 L76,33 C76,55 66,70 54,81 C42,70 32,55 32,33 Z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:startX="54"
+                android:startY="26"
+                android:endX="54"
+                android:endY="81"
+                android:type="linear">
+                <item android:offset="0.0" android:color="#2500E5FF" />
+                <item android:offset="1.0" android:color="#05818CF8" />
+            </gradient>
+        </aapt:attr>
+    </path>
+
+    <!-- Keyboard Base Body -->
+    <path
+        android:pathData="M40,41 L68,41 C70.2,41 72,42.8 72,45 L72,64 C72,66.2 70.2,68 68,68 L40,68 C37.8,68 36,66.2 36,64 L36,45 C36,42.8 37.8,41 40,41 Z"
+        android:fillColor="#1E293B"
+        android:strokeWidth="1.2"
+        android:strokeColor="#38BDF8" />
+
+    <!-- Keyboard Key Row 1 -->
+    <path
+        android:pathData="M39,45h5v4h-5z M46,45h5v4h-5z M53,45h5v4h-5z M60,45h5v4h-5z M67,45h3v4h-3z"
+        android:fillColor="#38BDF8" />
+
+    <!-- Keyboard Key Row 2 -->
+    <path
+        android:pathData="M40,51h5v4h-5z M47,51h5v4h-5z M54,51h5v4h-5z M61,51h5v4h-5z M68,51h2v4h-2z"
+        android:fillColor="#00F0FF" />
+
+    <!-- Keyboard Key Row 3 (Bottom bar / Space & modifiers) -->
+    <path
+        android:pathData="M39,57h6v4h-6z M47,57h15v4h-15z M64,57h6v4h-6z"
+        android:fillColor="#818CF8" />
+
+    <!-- Sparkle dot on top-right of shield -->
+    <path
+        android:pathData="M77,29 L78,26 L79,29 L82,30 L79,31 L78,34 L77,31 L74,30 Z"
+        android:fillColor="#00F0FF" />
+</vector>

@@ -1,0 +1,6 @@
+{
+  "name": "SecureType Keyboard",
+  "description": "Secure, 100% offline, privacy-first smart keyboard with multiple layouts, vibrant themes, smart backspace, and text editing tools.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
