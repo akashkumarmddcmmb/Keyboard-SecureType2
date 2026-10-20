@@ -24,56 +24,20 @@ android {
   signingConfigs {
     create("release") {
       val customKeystore = file("${rootDir}/my-upload-key.jks")
-      val debugKeystore = file("${rootDir}/debug.keystore")
       if (customKeystore.exists()) {
         storeFile = customKeystore
         storePassword = System.getenv("STORE_PASSWORD") ?: "android"
         keyAlias = System.getenv("KEY_ALIAS") ?: "upload"
         keyPassword = System.getenv("KEY_PASSWORD") ?: "android"
       } else {
-        if (!debugKeystore.exists()) {
-          try {
-            ProcessBuilder(
-              "keytool", "-genkey", "-v",
-              "-keystore", debugKeystore.absolutePath,
-              "-storepass", "android",
-              "-alias", "androiddebugkey",
-              "-keypass", "android",
-              "-keyalg", "RSA",
-              "-keysize", "2048",
-              "-validity", "10000",
-              "-dname", "CN=Android Debug,O=Android,C=US"
-            ).start().waitFor()
-          } catch (e: Exception) {
-            // Ignore if keytool not available
-          }
-        }
-        storeFile = debugKeystore
+        storeFile = file("${rootDir}/debug.keystore")
         storePassword = "android"
         keyAlias = "androiddebugkey"
         keyPassword = "android"
       }
     }
     create("debugConfig") {
-      val debugKeystore = file("${rootDir}/debug.keystore")
-      if (!debugKeystore.exists()) {
-        try {
-          ProcessBuilder(
-            "keytool", "-genkey", "-v",
-            "-keystore", debugKeystore.absolutePath,
-            "-storepass", "android",
-            "-alias", "androiddebugkey",
-            "-keypass", "android",
-            "-keyalg", "RSA",
-            "-keysize", "2048",
-            "-validity", "10000",
-            "-dname", "CN=Android Debug,O=Android,C=US"
-          ).start().waitFor()
-        } catch (e: Exception) {
-          // Ignore
-        }
-      }
-      storeFile = debugKeystore
+      storeFile = file("${rootDir}/debug.keystore")
       storePassword = "android"
       keyAlias = "androiddebugkey"
       keyPassword = "android"
